@@ -35,3 +35,6 @@ class BasePage:
 
     def take_screenshot(self, file_name: str):
         self.page.screenshot(path=f"screenshots/{file_name}")
+
+    def select_dropdown(self, locator: str, value: str):
+        self.page.locator(locator).select_option(value)

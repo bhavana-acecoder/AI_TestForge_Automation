@@ -1,24 +1,22 @@
 from pages.home_page import HomePage
 from pages.login_page import LoginPage
+from utilities.json_reader import JsonReader
 
 
-def test_open_login_page(page):
-    """
-    Verify that the user can navigate
-    from the Home Page to the Login Page.
-    """
+def test_valid_login(page):
 
-    # Create Home Page object
+    data = JsonReader.read_json("testdata/login.json")
+
     home = HomePage(page)
-
-    # Create Login Page object
     login = LoginPage(page)
 
-    # Open the application
     home.open()
 
-    # Click the Signup / Login menu
     home.click_login()
 
-    # Verify Login page title
-    assert "Signup / Login" in login.get_title()
+    login.login(
+        data["valid_user"]["email"],
+        data["valid_user"]["password"]
+    )
+
+    assert "Logged in as" in page.locator("a:has-text('Logged in as')").text_content()
