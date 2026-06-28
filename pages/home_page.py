@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-
+from config.config import Config
 
 class HomePage(BasePage):
     """
@@ -22,7 +22,7 @@ class HomePage(BasePage):
 
     # ---------- Actions ----------
     def open(self):
-        self.open_url("https://demo.nopcommerce.com/")
+        self.open_url(Config.BASE_URL)
 
     def click_login(self):
         self.click(self.LOGIN_LINK)
