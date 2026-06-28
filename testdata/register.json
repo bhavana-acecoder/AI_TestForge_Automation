@@ -1,0 +1,29 @@
+{
+    "user": {
+        "name": "Bhavana",
+        "password": "Test@123",
+
+        "day": "10",
+        "month": "5",
+        "year": "1995",
+
+        "first_name": "Bhavana",
+        "last_name": "Jain",
+
+        "company": "ABC Pvt Ltd",
+
+        "address1": "MG Road",
+
+        "address2": "Near Metro Station",
+
+        "country": "India",
+
+        "state": "Maharashtra",
+
+        "city": "Pune",
+
+        "zipcode": "411001",
+
+        "mobile": "9876543210"
+    }
+}
