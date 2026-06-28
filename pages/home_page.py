@@ -1,41 +1,47 @@
 from pages.base_page import BasePage
 from config.config import Config
 
+
 class HomePage(BasePage):
     """
-    Page Object for the nopCommerce Home Page.
-    This class contains locators and actions
-    that can be performed on the home page.
+    Page Object for the Home Page of Automation Exercise.
     """
 
-    # ---------- Locators ----------
-    LOGIN_LINK = ".ico-login"
-    REGISTER_LINK = ".ico-register"
-    SEARCH_BOX = "#small-searchterms"
-    SEARCH_BUTTON = "button[type='submit']"
-    CART_LINK = ".cart-label"
-    WISHLIST_LINK = ".wishlist-label"
+    # -----------------------
+    # Locators
+    # -----------------------
 
-    # ---------- Constructor ----------
+    SIGNUP_LOGIN_LINK = "a[href='/login']"
+    PRODUCTS_LINK = "a[href='/products']"
+    CART_LINK = "a[href='/view_cart']"
+    CONTACT_US_LINK = "a[href='/contact_us']"
+    TEST_CASES_LINK = "a[href='/test_cases']"
+
+    # -----------------------
+    # Constructor
+    # -----------------------
+
     def __init__(self, page):
         super().__init__(page)
 
-    # ---------- Actions ----------
+    # -----------------------
+    # Actions
+    # -----------------------
+
     def open(self):
         self.open_url(Config.BASE_URL)
 
-    def click_login(self):
-        self.click(self.LOGIN_LINK)
+    def click_signup_login(self):
+        self.click(self.SIGNUP_LOGIN_LINK)
 
-    def click_register(self):
-        self.click(self.REGISTER_LINK)
+    def click_products(self):
+        self.click(self.PRODUCTS_LINK)
 
-    def search_product(self, product_name):
-        self.fill(self.SEARCH_BOX, product_name)
-        self.click(self.SEARCH_BUTTON)
-
-    def open_cart(self):
+    def click_cart(self):
         self.click(self.CART_LINK)
 
-    def open_wishlist(self):
-        self.click(self.WISHLIST_LINK)
+    def click_contact_us(self):
+        self.click(self.CONTACT_US_LINK)
+
+    def click_test_cases(self):
+        self.click(self.TEST_CASES_LINK)

@@ -1,8 +1,16 @@
-from config.environments import BASE_URL
+# config/config.py
+
+from config.environments import Environments
 
 
 class Config:
-    BASE_URL = BASE_URL
+    """
+    Framework configuration.
+    """
+
+    ENVIRONMENT = "qa"
+
+    BASE_URL = Environments.URLS[ENVIRONMENT]
 
     BROWSER = "chromium"
 
