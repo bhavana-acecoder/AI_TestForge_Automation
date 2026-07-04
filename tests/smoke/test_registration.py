@@ -53,3 +53,11 @@ def test_register_new_user(page):
     registration.click_create_account()
 
     assert registration.get_account_created_message() == "ACCOUNT CREATED!"
+
+    registration.click_continue()
+
+    assert home.is_user_logged_in()
+
+    expected = f"Logged in as {data['user']['name']}"
+
+    assert home.get_logged_in_username() == expected

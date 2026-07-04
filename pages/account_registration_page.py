@@ -54,6 +54,8 @@ class AccountRegistrationPage(BasePage):
 
     CREATE_ACCOUNT_BUTTON = "button[data-qa='create-account']"
 
+    CONTINUE_BUTTON = "a[data-qa='continue-button']"
+
     # ==========================================
     # Validation
     # ==========================================
