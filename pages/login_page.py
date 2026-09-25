@@ -27,6 +27,7 @@ class LoginPage(BasePage):
     # ----------------------------
 
     LOGIN_ERROR = "form[action='/login'] p"
+    SIGNUP_ERROR = "form[action='/signup'] p"
 
     def __init__(self, page):
         super().__init__(page)
@@ -48,6 +49,9 @@ class LoginPage(BasePage):
         self.enter_login_email(email)
         self.enter_login_password(password)
         self.click_login()
+
+    def is_login_error_displayed(self):
+        return self.is_visible(self.LOGIN_ERROR)
 
     # ----------------------------
     # Signup Methods
@@ -73,3 +77,10 @@ class LoginPage(BasePage):
 
     def get_login_error(self):
         return self.get_text(self.LOGIN_ERROR)
+
+    def is_field_valid(self, locator):
+        """
+        Returns the browser's HTML5 validation state of an input field
+        (for example, a required field left empty is not valid).
+        """
+        return self.element(locator).evaluate("field => field.validity.valid")

@@ -1,0 +1,36 @@
+{
+    "invalid_credentials": [
+        {
+            "id": "wrong_password",
+            "use_registered_email": true,
+            "password": "Wrong@12345"
+        },
+        {
+            "id": "unregistered_email",
+            "use_registered_email": false,
+            "email": "not.registered.qa.user@example.com",
+            "password": "Demo@12345"
+        }
+    ],
+
+    "invalid_inputs": [
+        {
+            "id": "empty_email",
+            "email": "",
+            "password": "Demo@12345",
+            "invalid_field": "email"
+        },
+        {
+            "id": "invalid_email_format",
+            "email": "qa.user.example.com",
+            "password": "Demo@12345",
+            "invalid_field": "email"
+        },
+        {
+            "id": "empty_password",
+            "email": "qa.user@example.com",
+            "password": "",
+            "invalid_field": "password"
+        }
+    ]
+}

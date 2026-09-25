@@ -29,19 +29,16 @@ class AccountRegistrationPage(BasePage):
     # ==========================================
 
     FIRST_NAME = "#first_name"
-
     LAST_NAME = "#last_name"
 
     COMPANY = "#company"
 
     ADDRESS1 = "#address1"
-
     ADDRESS2 = "#address2"
 
     COUNTRY = "#country"
 
     STATE = "#state"
-
     CITY = "#city"
 
     ZIPCODE = "#zipcode"
@@ -130,55 +127,49 @@ class AccountRegistrationPage(BasePage):
         self.fill(self.MOBILE_NUMBER, mobile)
 
     # ==========================================
-    # Button
+    # Buttons
     # ==========================================
 
     def click_create_account(self):
         self.click(self.CREATE_ACCOUNT_BUTTON)
 
+    def click_continue(self):
+        self.click(self.CONTINUE_BUTTON)
+
     # ==========================================
     # Complete Registration
     # ==========================================
 
-    def fill_registration_form(
-        self,
-        password,
-        day,
-        month,
-        year,
-        first_name,
-        last_name,
-        company,
-        address1,
-        address2,
-        country,
-        state,
-        city,
-        zipcode,
-        mobile
-    ):
+    def fill_registration_form(self, user):
+        """
+        Fill the complete registration form
+        using data from register.json.
+        """
+
         self.select_mr_title()
-        self.enter_password(password)
 
-        self.select_day(day)
-        self.select_month(month)
-        self.select_year(year)
+        self.enter_password(user["password"])
 
-        self.enter_first_name(first_name)
-        self.enter_last_name(last_name)
-        self.enter_company(company)
+        self.select_day(user["day"])
+        self.select_month(user["month"])
+        self.select_year(user["year"])
 
-        self.enter_address1(address1)
-        self.enter_address2(address2)
+        self.enter_first_name(user["first_name"])
+        self.enter_last_name(user["last_name"])
 
-        self.select_country(country)
+        self.enter_company(user["company"])
 
-        self.enter_state(state)
-        self.enter_city(city)
+        self.enter_address1(user["address1"])
+        self.enter_address2(user["address2"])
 
-        self.enter_zipcode(zipcode)
+        self.select_country(user["country"])
 
-        self.enter_mobile_number(mobile)
+        self.enter_state(user["state"])
+        self.enter_city(user["city"])
+
+        self.enter_zipcode(user["zipcode"])
+
+        self.enter_mobile_number(user["mobile"])
 
     # ==========================================
     # Validation
@@ -186,3 +177,6 @@ class AccountRegistrationPage(BasePage):
 
     def get_account_created_message(self):
         return self.get_text(self.ACCOUNT_CREATED_MESSAGE)
+    
+    def is_account_created(self):
+        return "Account Created" in self.get_account_created_message()

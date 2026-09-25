@@ -1,0 +1,13 @@
+{
+    "new_user": {
+        "name": "Bhavana",
+        "username": "bhavanajain",
+        "email": "bhavana.qa@example.com"
+    },
+
+    "updated_user": {
+        "name": "Bhavana Jain",
+        "username": "qaautomation",
+        "email": "qa@test.com"
+    }
+}

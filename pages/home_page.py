@@ -23,8 +23,6 @@ class HomePage(BasePage):
 
     LOGOUT_LINK = "a[href='/logout']"
 
-    DELETE_ACCOUNT_LINK = "a[href='/delete_account']"
-
     # ======================================================
     # Validation
     # ======================================================
@@ -67,9 +65,6 @@ class HomePage(BasePage):
     def click_logout(self):
         self.click(self.LOGOUT_LINK)
 
-    def click_delete_account(self):
-        self.click(self.DELETE_ACCOUNT_LINK)
-
     # ======================================================
     # Validation
     # ======================================================
@@ -79,3 +74,6 @@ class HomePage(BasePage):
 
     def is_user_logged_in(self):
         return self.is_visible(self.LOGGED_IN_USER)
+
+    def is_login_page_displayed(self):
+        return "/login" in self.page.url

@@ -1,0 +1,22 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Pytest / reports / run output
+.pytest_cache/
+reports/
+screenshots/
+logs/
+test-results/
+
+# Runtime data and local-only files (never commit credentials)
+testdata/runtime_user.json
+*.local.json
+.env
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db

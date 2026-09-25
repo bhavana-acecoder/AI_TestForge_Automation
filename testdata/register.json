@@ -1,20 +1,20 @@
 {
     "user": {
-        "name": "Bhavana",
-        "password": "Test@123",
+        "name": "QA Demo",
+        "password": "Demo@12345",
 
-        "day": "10",
-        "month": "5",
-        "year": "1995",
+        "day": "1",
+        "month": "1",
+        "year": "1990",
 
-        "first_name": "Bhavana",
-        "last_name": "Jain",
+        "first_name": "QA",
+        "last_name": "Demo",
 
-        "company": "ABC Pvt Ltd",
+        "company": "Demo Company",
 
-        "address1": "MG Road",
+        "address1": "1 Test Street",
 
-        "address2": "Near Metro Station",
+        "address2": "Test Area",
 
         "country": "India",
 
@@ -24,6 +24,6 @@
 
         "zipcode": "411001",
 
-        "mobile": "9876543210"
+        "mobile": "9000000000"
     }
 }
