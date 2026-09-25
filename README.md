@@ -112,5 +112,5 @@ These are live public practice sites, so a test can fail if a site is down or ch
 
 `.github/workflows/tests.yml` runs the API and UI tests on GitHub Actions (Ubuntu,
 headless Chromium) on every push to `main` and on pull requests, and uploads the HTML
-reports as an artifact. It has not run on GitHub yet; its result will show in the
-Actions tab after the first push.
+reports as an artifact. The first workflow run (run #1, on commit `6a8555e`) completed
+successfully. See the Actions tab for current results.
